@@ -26,8 +26,10 @@ public class LineComparisonProblem {
 
         if(length1 == length2)
         System.out.println("Lines are equal");
+        else if (length1 < length2)
+            System.out.println("Second line is greater");
         else
-            System.out.println("Lines are not equal");
+            System.out.println("First line is greater");
 
 
     }
