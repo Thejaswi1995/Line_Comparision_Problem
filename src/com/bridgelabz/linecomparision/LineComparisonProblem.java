@@ -5,32 +5,52 @@ import java.util.Scanner;
 public class LineComparisonProblem {
     static double length1;
     static double length2;
-    public static void main(String[] args) {
+    public static void compareCalc()
+    {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the first co-ordinator:");
-        int x1 = sc.nextInt();
-        int y1 = sc.nextInt();
-        System.out.println("Enter the second co-ordinator:");
-        int x2 = sc.nextInt();
-        int y2 = sc.nextInt();
-        System.out.println("Enter the third co-ordinator:");
-        int x3 = sc.nextInt();
-        int y3 = sc.nextInt();
-        System.out.println("Enter the fourth co-ordinator:");
-        int x4 = sc.nextInt();
-        int y4 = sc.nextInt();
-        length1 = Math.sqrt(Math.pow((x2-x1),2)+ Math.pow((y2-y1),2));
-        System.out.println("The length of first line is :" +length1);
-        length2 = Math.sqrt(Math.pow((x4-x3),2)+ Math.pow((y4-y3),2));
-        System.out.println("The length of second line is :" +length2);
 
-        if(length1 == length2)
-        System.out.println("Lines are equal");
-        else if (length1 < length2)
-            System.out.println("Second line is greater");
-        else
-            System.out.println("First line is greater");
+        System.out.println("\nPoint for line 1");
+        System.out.println("\nEnter the value of x1: ");
+        double x1 = sc.nextDouble();
+        System.out.println("Enter the value of y1: ");
+        double y1 = sc.nextDouble();
+        System.out.println("Enter the value of x2: ");
+        double x2 = sc.nextDouble();
+        System.out.println("Enter the value of y2: ");
+        double y2 = sc.nextDouble();
+        double powLine1X = Math.pow((x2 - x1), 2);
+        double powLine1Y = Math.pow((y2 - y1), 2);
+        double firstLineLength = Math.sqrt((powLine1X + powLine1Y));
+        System.out.println("\nLength of line is: " + firstLineLength);
+        System.out.println("\nPoint for line 2");
+        System.out.println("\nEnter the value of x3: ");
+        double x3 = sc.nextDouble();
+        System.out.println("Enter the value of y3: ");
+        double y3 = sc.nextDouble();
+        System.out.println("Enter the value of x4: ");
+        double x4 = sc.nextDouble();
+        System.out.println("Enter the value of y4: ");
+        double y4 = sc.nextDouble();
+        double powLine2X = Math.pow((x4 - x3), 2);
+        double powLine2Y = Math.pow((y4 - y3), 2);
+        double secondLineLength = Math.sqrt((powLine2X + powLine2Y));
+        System.out.println("\nLength of line is: " + secondLineLength);
 
+        Double firstLineLengthObj = firstLineLength;
+        Double secondLineLengthObj = secondLineLength;
 
+        int compareValue = firstLineLengthObj.compareTo(secondLineLengthObj);
+        if (compareValue == 0) {
+            System.out.println("\nTwo lines are equal");
+        } else if (compareValue < 0) {
+            System.out.println("\nSecond line is larger");
+        } else {
+            System.out.println("\nFirst line is larger");
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        compareCalc();
     }
 }
